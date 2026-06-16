@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="src\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="assets\link_background.png" />
+      <None Remove="assets\link_level_01.png" />
+      <Resource Include="Assets\Images\Linked_GATE_AIR.png" />
+      <Resource Include="Assets\Images\Linked_GATE_AMAZON.png" />
+      <Resource Include="Assets\Images\Linked_GATE_CRYSTAL.png" />
+      <Resource Include="Assets\Images\Linked_GATE_LUMINOUS.png" />
+      <Resource Include="Assets\Images\Linked_GATE_NEW.png" />
+      <Resource Include="Assets\Images\Linked_GATE_ORIGIN.png" />
+      <Resource Include="Assets\Images\Linked_GATE_PARADISE.png" />
+      <Resource Include="Assets\Images\Linked_GATE_STAR.png" />
+      <Resource Include="Assets\Images\Linked_GATE_SUN.png" />
+      <Resource Include="Assets\Images\Linked_GATE_UNIVERSE.png" />
+      <Resource Include="Assets\Images\Linked_GATE_VERSE.png" />
+      <Resource Include="Assets\Images\Linked_GATE_X-VERSE.png" />
+      <Resource Include="Assets\Images\link_background.png" />
+      <None Remove="assets\link_level_02.png" />
+      <Resource Include="Assets\Images\link_level_01.png" />
+      <None Remove="assets\link_level_03.png" />
+      <Resource Include="Assets\Images\link_level_02.png" />
+      <None Remove="assets\link_level_04.png" />
+      <Resource Include="Assets\Images\link_level_03.png" />
+      <None Remove="assets\link_level_05.png" />
+      <Resource Include="Assets\Images\link_level_04.png" />
+      <None Remove="assets\Linked_GATE_AIR.png" />
+      <Resource Include="Assets\Images\link_level_05.png" />
+      <None Remove="assets\Linked_GATE_AMAZON.png" />
+      <None Remove="assets\Linked_GATE_CRYSTAL.png" />
+      <None Remove="assets\Linked_GATE_LUMINOUS.png" />
+      <None Remove="assets\Linked_GATE_NEW.png" />
+      <None Remove="assets\Linked_GATE_ORIGIN.png" />
+      <None Remove="assets\Linked_GATE_PARADISE.png" />
+      <None Remove="assets\Linked_GATE_STAR.png" />
+      <None Remove="assets\Linked_GATE_SUN.png" />
+      <None Remove="assets\Linked_GATE_UNIVERSE.png" />
+      <None Remove="assets\Linked_GATE_VERSE.png" />
+      <None Remove="assets\Linked_GATE_X-VERSE.png" />
+      <None Remove="assets\pen_sleep_apng.png" />
+      <None Remove="assets\YRI8UKP26A4F4G810VAYZW9T9SXO49BP.png" />
+      <Resource Include="Assets\Images\pen_sleep_apng.gif" />
+      <None Remove="assets\pen_sleep.gif" />
+      <Resource Include="Assets\Images\YRI8UKP26A4F4G810VAYZW9T9SXO49BP.png" />
+      <None Remove="Assets\Images\linked_verse_img_home.png" />
+      <Resource Include="Assets\Images\linked_verse_img_home.png" />
+      <None Remove="Assets\Images\linked_verse_img_top.png" />
+      <Resource Include="Assets\Images\linked_verse_img_top.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="Views\MainWindow.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Views\FunctionWindow.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+</Project>
