@@ -18,6 +18,13 @@
                Stretch="Uniform"
                HorizontalAlignment="Stretch"
                VerticalAlignment="Stretch"/>
+        
+        <Button x:Name="PauseButton"
+                Style="{StaticResource ImageButtonStyle}"
+                Click="PauseButton_Click"
+                HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Image x:Name="PauseImage" Source="/Assets/Images/link_level_02.png" Width="40" Height="40"/>
+        </Button>
 
         <ContentControl x:Name="PageContent" Margin="20,50,20,16"/>
         <!-- Hex buttons on top -->

@@ -21,6 +21,9 @@
         Background="Transparent"
         Topmost="True"
         ShowInTaskbar="False"
+        MouseRightButtonDown="PetSprite_MouseRightButtonDown"
+        MouseLeftButtonUp="Window_MouseLeftButtonUp"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Width="100" Height="100"
         Left="500" Top="500">
     <Grid>
@@ -28,7 +31,9 @@
             x:Name="PetSprite"
             gif:ImageBehavior.AnimatedSource="/Assets/Images/pen_sleep_apng.gif"
             gif:ImageBehavior.RepeatBehavior="Forever"
-            MouseRightButtonDown="PetSprite_MouseRightButtonDown"
             Width="100" Height="100" />
     </Grid>
 </Window>
+<!-- MouseLeftButtonDown="Window_MouseLeftButtonDown" -->
+<!-- MouseLeftButtonUp="Window_MouseLeftButtonUp" -->
+<!-- MouseMove="Window_MouseMove" -->

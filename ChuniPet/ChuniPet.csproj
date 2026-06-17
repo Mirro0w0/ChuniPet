@@ -58,6 +58,16 @@
       <Resource Include="Assets\Images\linked_verse_img_home.png" />
       <None Remove="Assets\Images\linked_verse_img_top.png" />
       <Resource Include="Assets\Images\linked_verse_img_top.png" />
+      <None Remove="Assets\Images\penguin02.png" />
+      <Resource Include="Assets\Images\penguin02.png" />
+      <None Remove="Assets\Images\penguin10.png" />
+      <Resource Include="Assets\Images\penguin10.png" />
+      <None Remove="Assets\Images\honor_bg_rainbow.png" />
+      <Resource Include="Assets\Images\honor_bg_rainbow.png" />
+      <None Remove="Assets\Images\honor_bg_master.png" />
+      <Resource Include="Assets\Images\honor_bg_master.png" />
+      <None Remove="Assets\Images\honor_bg_gold.png" />
+      <Resource Include="Assets\Images\honor_bg_gold.png" />
     </ItemGroup>
 
     <ItemGroup>
