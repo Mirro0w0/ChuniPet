@@ -345,6 +345,14 @@ public partial class MainWindow : Window
         }
     }
     
+    private void ToggleWindow(object sender, RoutedEventArgs e)
+    {
+        if (_functionWindow != null && _functionWindow.IsVisible)
+        {
+            _functionWindow.Hide();
+        }
+    }
+    
     private void StopPet(object sender, RoutedEventArgs e)
     {
         _settings.StopPenguinMovement = TogglePause();

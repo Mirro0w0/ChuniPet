@@ -14,91 +14,12 @@
         Left="500" Top="500">
     
     <Grid>
-        <Image Source="/Assets/Images/link_background.png"
+        <!-- or link_background -->
+        <Image Source="/Assets/Images/Backgrounds/CHU_UI_Common_dialog_LV.png"
                Stretch="Uniform"
                HorizontalAlignment="Stretch"
                VerticalAlignment="Stretch"/>
 
         <ContentControl x:Name="PageContent" Margin="20,50,20,16"/>
-        <!-- Hex buttons on top -->
-        <!-- <Grid Margin="20,50,20,16"> -->
-        <!--     <Grid.RowDefinitions> -->
-        <!--         <RowDefinition Height="Auto"/> -->
-        <!--         <RowDefinition Height="Auto"/> -->
-        <!--     </Grid.RowDefinitions> -->
-        <!-- -->
-        <!--     <StackPanel Grid.Row="0" Orientation="Horizontal"> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click1" > -->
-        <!--             <Button.ToolTip> -->
-        <!--                 <ToolTip Content="Copy Content"  -->
-        <!--                          FontSize="13" -->
-        <!--                          Background="#CC1a1a2e" -->
-        <!--                          Foreground="White" -->
-        <!--                          BorderBrush="#665599FF" -->
-        <!--                          BorderThickness="1" -->
-        <!--                          Padding="8,4"/> -->
-        <!--             </Button.ToolTip> -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_ORIGIN.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click2" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_AIR.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click3" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_STAR.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click4" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_AMAZON.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click5" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_CRYSTAL.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click6" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_PARADISE.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--     </StackPanel> -->
-        <!--     ~1~ Row 1 @1@ -->
-        <!--     <StackPanel Grid.Row="0" Orientation="Horizontal"> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click1" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_ORIGIN.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click2" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_AIR.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click3" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_STAR.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click4" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_AMAZON.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click5" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_CRYSTAL.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click6" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_PARADISE.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--     </StackPanel> -->
-        <!--      -->
-        <!--     <StackPanel Grid.Row="1" Orientation="Horizontal" -->
-        <!--                 Margin="32,6,0,0"> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click7" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_NEW.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click8" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_SUN.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click9" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_LUMINOUS.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click10" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_VERSE.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click11" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_X-VERSE.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--         <Button Style="{StaticResource ImageButtonStyle}" Click="Btn_Click12" > -->
-        <!--             <Image Source="/Assets/Images/Linked_GATE_UNIVERSE.png" Width=" 80" Height=" 80"/> -->
-        <!--         </Button> -->
-        <!--     </StackPanel> -->
-        <!-- </Grid> -->
     </Grid>
 </Window>

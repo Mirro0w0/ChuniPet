@@ -23,6 +23,7 @@ public partial class App : Application
 
         Settings = SettingsService.Load();
         SeedTracks();
+        ClipboardService.Initialize();
     }
 
     private void SeedTracks()

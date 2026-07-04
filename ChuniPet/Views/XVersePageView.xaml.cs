@@ -11,7 +11,7 @@ namespace ChuniPet.Views;
 
 public partial class XVersePageView : UserControl
 {
-    
+    public event Action? BackClicked;
     private readonly MusicPlayerService _player = App.MusicPlayer;
     private bool _isDraggingSlider = false;
 
@@ -114,4 +114,7 @@ public partial class XVersePageView : UserControl
         _player.SeekTo(TimeSpan.FromSeconds(SeekSlider.Value));
         _isDraggingSlider = false;
     }
+    
+    private void BackButton_Click(object sender, RoutedEventArgs e)
+        => BackClicked?.Invoke();
 }

@@ -44,6 +44,26 @@ public partial class FunctionWindow : Window
             gp.BackClicked += ShowMainMenu;
         else if (page is OriginPageView op)
             op.BackClicked += ShowMainMenu;
+        else if (page is AirPageView airp)
+            airp.BackClicked += ShowMainMenu;
+        // else if (page is StarPageView sp)
+        //     sp.BackClicked += ShowMainMenu;
+        // else if (page is AirPageView amazonp)
+        //     airp.BackClicked += ShowMainMenu;
+        // else if (page is AirPageView cp)
+        //     airp.BackClicked += ShowMainMenu;
+        // else if (page is AirPageView pp)
+        //     airp.BackClicked += ShowMainMenu;
+        // else if (page is AirPageView np)
+        //     airp.BackClicked += ShowMainMenu;
+        // else if (page is AirPageView sunp)
+        //     airp.BackClicked += ShowMainMenu;
+        // else if (page is AirPageView lp)
+        //     airp.BackClicked += ShowMainMenu;
+        // else if (page is VersePageView vp)
+        //     airp.BackClicked += ShowMainMenu;
+        else if (page is XVersePageView xp)
+            xp.BackClicked += ShowMainMenu;
         else if (page is UniversePageView up)
             up.BackClicked += ShowMainMenu;
 

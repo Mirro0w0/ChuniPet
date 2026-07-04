@@ -6,50 +6,118 @@
              mc:Ignorable="d"
              d:DesignHeight="230" d:DesignWidth="510">
 
+    <UserControl.Resources>
+        <Style x:Key="DayToggleButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="42"/>
+            <Setter Property="Height" Value="26"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Background" Value="#332E9BFF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DeleteButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="22"/>
+            <Setter Property="Height" Value="22"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="#A13544"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Content" Value="✕"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid Margin="8,8,8,8">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />   <!-- search box -->
+            <RowDefinition Height="Auto" />   <!-- search box + clear button -->
+            <RowDefinition Height="Auto" />   <!-- day toggle buttons -->
             <RowDefinition Height="*" />      <!-- list -->
             <RowDefinition Height="Auto" />   <!-- back button -->
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Cursor="Hand"
-              Margin="0,-30,0,4">
-            <Image Source="/Assets/Images/honor_bg_rainbow.png"
-                   Stretch="Fill" />
+        <!-- Search Bar + Clear Button -->
+        <Grid Grid.Row="0" Margin="0,-30,0,4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
-            <TextBox x:Name="SearchBox"
-                     Background="Transparent"
-                     BorderThickness="0"
-                     FontSize="13"
-                     Padding="8,5"
-                     VerticalContentAlignment="Center"
-                     TextChanged="SearchBox_TextChanged">
-                <TextBox.Resources>
-                    <!-- Placeholder text -->
-                    <Style TargetType="TextBox">
-                        <Style.Triggers>
-                            <Trigger Property="Text" Value="">
-                                <Setter Property="Background">
-                                    <Setter.Value>
-                                        <VisualBrush AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                                            <VisualBrush.Visual>
-                                                <TextBlock Text="Search copied items..."
-                                                           Foreground="Black"
-                                                           FontSize="23"
-                                                           Margin="8,0,0,0" />
-                                            </VisualBrush.Visual>
-                                        </VisualBrush>
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
+            <Grid Grid.Column="0" Cursor="Hand">
+                <Image Source="/Assets/Images/honor_bg_rainbow.png" Stretch="Fill" />
+
+                <TextBox x:Name="SearchBox"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         FontSize="13"
+                         Padding="8,5"
+                         VerticalContentAlignment="Center"
+                         TextChanged="SearchBox_TextChanged">
+                    <TextBox.Resources>
+                        <Style TargetType="TextBox">
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="">
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <VisualBrush AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                                <VisualBrush.Visual>
+                                                    <TextBlock Text="Search copied items..."
+                                                               Foreground="Black"
+                                                               FontSize="23"
+                                                               Margin="8,0,0,0" />
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+
+            <Button Grid.Column="1"
+                    Content="🗑"
+                    FontSize="16"
+                    Width="32" Height="32"
+                    Margin="6,0,0,0"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    ToolTip="Delete all entries for selected day"
+                    Click="ClearAll_Click"/>
         </Grid>
 
-        <ScrollViewer Grid.Row="1"
+        <!-- Day Toggle Buttons (This Week) -->
+        <StackPanel x:Name="DayButtonsPanel"
+                    Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,0,6"/>
+
+        <!-- History List -->
+        <ScrollViewer Grid.Row="2"
                       VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Disabled">
             <ItemsControl x:Name="HistoryList">
@@ -57,8 +125,9 @@
                     <DataTemplate>
                         <Grid Cursor="Hand"
                               Margin="0,0,0,4"
-                              MouseLeftButtonUp="HistoryItem_Hold"
-                              MouseLeftButtonDown="HistoryItem_Click">
+                              Width="350"
+                              MouseLeftButtonUp="HistoryItem_Click"
+                              MouseLeftButtonDown="HistoryItem_Hold">
                             <Image x:Name="HistoryItem"
                                    Source="/Assets/Images/honor_bg_gold.png"
                                    Stretch="Fill" />
@@ -70,14 +139,19 @@
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock Grid.Column="0"
-                                           Text="{Binding}"
+                                           Text="{Binding Preview}"
                                            TextAlignment="Center"
                                            Foreground="Black"
                                            FontWeight="Bold"
                                            FontSize="15"
                                            TextTrimming="CharacterEllipsis"
                                            VerticalAlignment="Center"
-                                           MaxWidth="380" />
+                                           MaxWidth="340" />
+
+                                <Button Grid.Column="1"
+                                        Style="{StaticResource DeleteButtonStyle}"
+                                        Click="DeleteEntry_Click"
+                                        VerticalAlignment="Center"/>
                             </Grid>
                         </Grid>
                     </DataTemplate>
@@ -85,12 +159,60 @@
             </ItemsControl>
         </ScrollViewer>
 
-        <Button Grid.Row="2"
-                Style="{StaticResource ImageButtonStyle}"
-                Click="BackButton_Click"
-                HorizontalAlignment="Left"
-                Margin="0,6,0,0">
-            <Image Source="/Assets/Images/link_level_01.png" Width="40" Height="40" />
-        </Button>
+        <!-- <Button Grid.Row="3" -->
+        <!--         Style="{StaticResource ImageButtonStyle}" -->
+        <!--         Click="BackButton_Click" -->
+        <!--         HorizontalAlignment="Left" -->
+        <!--         Margin="0,6,0,-23"> -->
+        <!--     <Grid> -->
+        <!--         <Image Source="/Assets/Images/UiElements/blue_botton.png" Width="100" /> -->
+        <!--         <TextBlock Text="Back" -->
+        <!--                    HorizontalAlignment="Center" -->
+        <!--                    VerticalAlignment="Center" -->
+        <!--                    FontSize="14" -->
+        <!--                    Margin="0,0,0,-10" -->
+        <!--                    FontWeight="Bold" -->
+        <!--                    Foreground="White"/> -->
+        <!--     </Grid> -->
+        <!-- </Button> -->
+        <Grid Grid.Row="3" Margin="0,6,0,-23">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    Style="{StaticResource ImageButtonStyle}"
+                    Click="BackButton_Click">
+                <Grid>
+                    <Image Source="/Assets/Images/UiElements/blue_botton.png" Width="100" />
+                    <TextBlock Text="Back"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="14"
+                               Margin="0,0,0,-10"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+                </Grid>
+            </Button>
+
+            <Button Grid.Column="2"
+                    Margin="0,0,11,0"
+                    Style="{StaticResource ImageButtonStyle}"
+                    Click="ClearAll_Click">
+                <Grid>
+                    <Image Source="/Assets/Images/UiElements/red_button.png" Width="100" />
+                    <TextBlock Text="Clear"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="14"
+                               Margin="0,0,0,-10"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+                </Grid>
+            </Button>
+
+        </Grid>
     </Grid>
 </UserControl>

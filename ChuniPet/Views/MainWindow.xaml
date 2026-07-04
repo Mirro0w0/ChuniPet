@@ -36,6 +36,7 @@
                         MenuActivation="RightClick">
             <notifyIcon:TaskbarIcon.ContextMenu>
                 <ContextMenu>
+                    <MenuItem x:Name="CloseWinodw" Header="Force Close Window" Click="ToggleWindow" />
                     <MenuItem x:Name="HideName" Header="Hide Chuni Penguin" Click="HidePet" />
                     <MenuItem Header="Toggle Movement" Click="StopPet" />
                     <Separator />

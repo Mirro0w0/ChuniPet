@@ -176,11 +176,18 @@
       <None Remove="Assets\Images\gateFrame.png" />
       <Resource Include="Assets\Images\gateFrame.png" />
       <None Remove="Assets\Images\Icons\app.ico" />
+      <None Remove="Assets\Images\Backgrounds\CHU_UI_Common_dialog_LV.png" />
+      <Resource Include="Assets\Images\Backgrounds\CHU_UI_Common_dialog_LV.png" />
+      <None Remove="Assets\Images\UiElements\blue_botton.png" />
+      <Resource Include="Assets\Images\UiElements\blue_botton.png" />
+      <None Remove="Assets\Images\UiElements\red_button.png" />
+      <Resource Include="Assets\Images\UiElements\red_button.png" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="H.NotifyIcon.Wpf" Version="2.4.1" />
       <PackageReference Include="NAudio" Version="2.3.0" />
+      <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
       <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
     </ItemGroup>
 

@@ -10,6 +10,7 @@ namespace ChuniPet.Views;
 
 public partial class AirPageView : UserControl
 {
+    public event Action? BackClicked;
     public AirPageView()
     {
         InitializeComponent();
@@ -104,4 +105,6 @@ public partial class AirPageView : UserControl
             });
         }
     }
+    private void BackButton_Click(object sender, RoutedEventArgs e)
+        => BackClicked?.Invoke();
 }
