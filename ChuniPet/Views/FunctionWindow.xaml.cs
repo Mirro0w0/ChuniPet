@@ -15,20 +15,7 @@ public partial class FunctionWindow : Window
     {
         InitializeComponent();
         _mainWindow = mainWindow;
-        PauseImage.Source = _mainWindow.IsPaused ? 
-            new BitmapImage(new Uri("/Assets/Images/link_level_03.png", UriKind.Relative)) : 
-            new BitmapImage(new Uri("/Assets/Images/link_level_02.png", UriKind.Relative));
         ShowMainMenu();
-    }
-    
-    private void PauseButton_Click(object sender, RoutedEventArgs e)
-    {
-        _mainWindow.TogglePause();
-        // Assumes you have an <Image x:Name="myImage"/> control in your XAML
-
-        PauseImage.Source = _mainWindow.IsPaused ? 
-            new BitmapImage(new Uri("/Assets/Images/link_level_03.png", UriKind.Relative)) : 
-            new BitmapImage(new Uri("/Assets/Images/link_level_02.png", UriKind.Relative));
     }
     
     private void ShowMainMenu()
@@ -47,7 +34,9 @@ public partial class FunctionWindow : Window
         UserControl page = gateName switch
         {
             "ORIGIN"   => new OriginPageView(),
-            "UNIVERSE" => new UniversePageView(),
+            "AIR"   => new AirPageView(),
+            "X-VERSE" => new XVersePageView(),
+            "UNIVERSE" => new UniversePageView(_mainWindow),
             _          => new GatePageView(gateName)
         };
 
@@ -73,10 +62,11 @@ public partial class FunctionWindow : Window
         this.BeginAnimation(OpacityProperty, fadeIn);
     }
     
-    private void FunctionWindow_Deactivated(object sender, EventArgs e)
-    {
-        // this.Close();
-        Dispatcher.BeginInvoke(new Action(() => this.Close()),
-            System.Windows.Threading.DispatcherPriority.Background);
-    }
+    // private void FunctionWindow_Deactivated(object sender, EventArgs e)
+    // {
+    //     // Deactivated="FunctionWindow_Deactivated"
+    //     // this.Close();
+    //     Dispatcher.BeginInvoke(new Action(() => this.Close()),
+    //         System.Windows.Threading.DispatcherPriority.Background);
+    // }
 }

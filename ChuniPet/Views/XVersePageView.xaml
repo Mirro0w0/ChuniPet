@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="ChuniPet.Views.XVersePageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ChuniPet.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="275" d:DesignWidth="550">
+    <Grid>
+        <Grid Margin="0, -25,0,0">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+                <!-- Previous track -->
+                <Button x:Name="PrevButton"
+                        Width="48" Height="48"
+                        Margin="0,0,13,0"
+                        Background="Transparent" BorderThickness="0"
+                        Click="PrevButton_Click">
+                    <Image Source="/Assets/Images/UiElements/left.png" Width="36" Height="36" />
+                </Button>
+
+                <!-- Album art -->
+                <Border CornerRadius="12"
+                        Width="140" Height="140"
+                        Background="#22FFFFFF"
+                        Margin="0,0,20,0">
+                    <Image x:Name="AlbumArtImage"
+                           Stretch="UniformToFill"
+                           RenderOptions.BitmapScalingMode="HighQuality"
+                           Width="140" Height="140" />
+                </Border>
+
+                <!-- Track info + controls -->
+                <StackPanel Width="240" VerticalAlignment="Center">
+
+                    <TextBlock x:Name="TrackTitleText"
+                               FontSize="18" FontWeight="Bold"
+                               Foreground="Black"
+                               TextTrimming="CharacterEllipsis" />
+
+                    <TextBlock x:Name="TrackArtistText"
+                               FontSize="13"
+                               Foreground="Black"
+                               Margin="0,2,0,12"
+                               TextTrimming="CharacterEllipsis" />
+
+                    <!-- Seek bar -->
+                    <Slider x:Name="SeekSlider"
+                            Minimum="0" Maximum="1"
+                            Height="20"
+                            Thumb.DragStarted="SeekSlider_DragStarted"
+                            Thumb.DragCompleted="SeekSlider_DragCompleted" />
+
+                    <Grid Margin="0,2,0,10">
+                        <TextBlock x:Name="CurrentTimeText"
+                                   Text="0:00"
+                                   FontSize="11" Foreground="Black"
+                                   HorizontalAlignment="Left" />
+                        <TextBlock x:Name="TotalTimeText"
+                                   Text="0:00"
+                                   FontSize="11" Foreground="Black"
+                                   HorizontalAlignment="Right" />
+                    </Grid>
+
+                    <!-- Playback controls -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                        <Button x:Name="StopButton"
+                                Width="36" Height="36" Margin="0,0,12,0"
+                                Background="Transparent" BorderThickness="0"
+                                Click="StopButton_Click">
+                            <Image Source="/Assets/Images/UiElements/stop.png" Width="26" Height="26" />
+                        </Button>
+
+                        <Button x:Name="PlayPauseButton"
+                                Width="48" Height="48" Margin="0,0,12,0"
+                                Background="Transparent" BorderThickness="0"
+                                Click="PlayPauseButton_Click">
+                            <Image x:Name="PlayPauseImage"
+                                   Source="/Assets/Images/UiElements/play_audio.png"
+                                   Width="36" Height="36" />
+                        </Button>
+
+                        <Button x:Name="LoopButton"
+                                Width="36" Height="36"
+                                Background="Transparent" BorderThickness="0"
+                                Click="LoopButton_Click">
+                            <Image x:Name="LoopImage"
+                                   Source="/Assets/Images/UiElements/loop_audio_end.png"
+                                   Width="26" Height="26" />
+                        </Button>
+
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Next track -->
+                <Button x:Name="NextButton"
+                        Width="48" Height="48"
+                        Margin="13,0,0,0"
+                        Background="Transparent" BorderThickness="0"
+                        Click="NextButton_Click">
+                    <Image Source="/Assets/Images/UiElements/right.png" Width="36" Height="36" />
+                </Button>
+
+            </StackPanel>
+        </Grid>
+        <!-- Top-left corner icon -->
+        <Image x:Name="GateIcon"
+               Margin="-20,-50,0,0"
+               Width="80" Height="80"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top" />
+    </Grid>
+</UserControl>

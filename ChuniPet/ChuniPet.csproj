@@ -9,6 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="Assets\Images\Jackets\" />
+      <Folder Include="Assets\Music\" />
       <Folder Include="src\" />
     </ItemGroup>
 
@@ -68,9 +70,113 @@
       <Resource Include="Assets\Images\honor_bg_master.png" />
       <None Remove="Assets\Images\honor_bg_gold.png" />
       <Resource Include="Assets\Images\honor_bg_gold.png" />
+      <None Remove="Assets\Images\UiElements\pause.png" />
+      <Resource Include="Assets\Images\UiElements\pause.png" />
+      <None Remove="Assets\Images\UiElements\play.png" />
+      <Resource Include="Assets\Images\UiElements\play.png" />
+      <None Remove="Assets\Images\UiElements\stop.png" />
+      <Resource Include="Assets\Images\UiElements\stop.png" />
+      <None Remove="Assets\Images\UiElements\folder.png" />
+      <Resource Include="Assets\Images\UiElements\folder.png" />
+      <None Remove="Assets\Images\Jackets\Everything_Will_Be_One.png" />
+      <Resource Include="Assets\Images\Jackets\Everything_Will_Be_One.png" />
+      <None Remove="Assets\Images\Jackets\Gessou.png" />
+      <Resource Include="Assets\Images\Jackets\Gessou.png" />
+      <None Remove="Assets\Images\Jackets\Kaminari.png" />
+      <Resource Include="Assets\Images\Jackets\Kaminari.png" />
+      <None Remove="Assets\Images\Jackets\Linked_Tune.png" />
+      <Resource Include="Assets\Images\Jackets\Linked_Tune.png" />
+      <None Remove="Assets\Images\Jackets\Melodiniq.png" />
+      <Resource Include="Assets\Images\Jackets\Melodiniq.png" />
+      <None Remove="Assets\Images\Jackets\OUTRAGE.png" />
+      <Resource Include="Assets\Images\Jackets\OUTRAGE.png" />
+      <None Remove="Assets\Images\Jackets\Phantom_Crisis.png" />
+      <Resource Include="Assets\Images\Jackets\Phantom_Crisis.png" />
+      <None Remove="Assets\Images\Jackets\Rinne_reirei.png" />
+      <Resource Include="Assets\Images\Jackets\Rinne_reirei.png" />
+      <None Remove="Assets\Images\Jackets\Rokurokubi.png" />
+      <Resource Include="Assets\Images\Jackets\Rokurokubi.png" />
+      <None Remove="Assets\Images\Jackets\Sweet_and_Sour.png" />
+      <Resource Include="Assets\Images\Jackets\Sweet_and_Sour.png" />
+      <None Remove="Assets\Images\Jackets\Tru'nembra.png" />
+      <Resource Include="Assets\Images\Jackets\Tru'nembra.png" />
+      <None Remove="Assets\Images\Jackets\Tsukuri.png" />
+      <Resource Include="Assets\Images\Jackets\Tsukuri.png" />
+      <None Remove="Assets\Images\Jackets\YOUNITHM.png" />
+      <Resource Include="Assets\Images\Jackets\YOUNITHM.png" />
+      <None Remove="Assets\Music\Everything_Will_Be_One.wav" />
+      <Content Include="Assets\Music\Everything_Will_Be_One.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Gessou.wav" />
+      <Content Include="Assets\Music\Gessou.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Kamirari.wav" />
+      <Content Include="Assets\Music\Kamirari.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Linked_Tune.wav" />
+      <Content Include="Assets\Music\Linked_Tune.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Melodiniq.wav" />
+      <Content Include="Assets\Music\Melodiniq.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Outrage.wav" />
+      <Content Include="Assets\Music\Outrage.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Phantom_Crisis.wav" />
+      <Content Include="Assets\Music\Phantom_Crisis.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Rinne_Reirei.wav" />
+      <Content Include="Assets\Music\Rinne_Reirei.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Rokurokubi.wav" />
+      <Content Include="Assets\Music\Rokurokubi.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Tru'nembra.wav" />
+      <Content Include="Assets\Music\Tru'nembra.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Tsukuri.wav" />
+      <Content Include="Assets\Music\Tsukuri.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Younithm.wav" />
+      <Content Include="Assets\Music\Younithm.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Images\UiElements\left.png" />
+      <Resource Include="Assets\Images\UiElements\left.png" />
+      <None Remove="Assets\Images\UiElements\right.png" />
+      <Resource Include="Assets\Images\UiElements\right.png" />
+      <None Remove="Assets\Images\UiElements\play_audio.png" />
+      <Resource Include="Assets\Images\UiElements\play_audio.png" />
+      <None Remove="Assets\Images\UiElements\pause_audio.png" />
+      <Resource Include="Assets\Images\UiElements\pause_audio.png" />
+      <Resource Include="Assets\Images\UiElements\loop_audio_end.png" />
+      <None Remove="Assets\Images\UiElements\loop_audio.png" />
+      <Resource Include="Assets\Images\UiElements\loop_audio.png" />
+      <None Remove="Assets\Music\Sweet_and_Sour.wav" />
+      <Content Include="Assets\Music\Sweet_and_Sour.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Music\Verse_X.wav" />
+      <Content Include="Assets\Music\Verse_X.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Images\gateFrame.png" />
+      <Resource Include="Assets\Images\gateFrame.png" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="NAudio" Version="2.3.0" />
       <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
     </ItemGroup>
 

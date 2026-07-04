@@ -11,6 +11,7 @@ namespace ChuniPet.Views;
 public partial class MainWindow : Window
 {
     private FunctionWindow? _functionWindow;
+    private readonly AppSettings _settings = App.Settings;
     
     private enum PetState { Idle, WalkLeft, WalkRight, Falling, Dragging, Jumping }
     private PetState _currentState = PetState.Idle;
@@ -28,13 +29,27 @@ public partial class MainWindow : Window
     private Point _dragStartScreenPos;
     private Point _dragStartWindowPos;
     
-    private bool _isPaused = false;
+    private bool _isPaused = true;
 
     public MainWindow()
     {
         InitializeComponent();
         Loaded += (s, e) => SnapToTaskbar();
-        StartGroundBehaviour();
+        LoadFromSettings();
+        // StartGroundBehaviour();
+    }
+    
+    private void LoadFromSettings()
+    {
+        _isPaused = _settings.StopPenguinMovement;
+        if (_settings.PenguinMovesOnStartup && _settings.StopPenguinMovement)
+        {
+            _settings.StopPenguinMovement = false;
+            _isPaused = false;
+            SettingsService.Save(_settings);
+        }
+        if(!_isPaused) StartGroundBehaviour();
+        Console.WriteLine($"ispaused = {_isPaused}");
     }
     
     
@@ -129,7 +144,10 @@ public partial class MainWindow : Window
     {
         // Don't open a second one if already open
         if (_functionWindow != null && _functionWindow.IsVisible)
+        {
+            _functionWindow.Hide();
             return;
+        }
 
         // Position the menu near the pet
         _functionWindow = new FunctionWindow(this);

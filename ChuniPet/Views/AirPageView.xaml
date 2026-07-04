@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="ChuniPet.Views.AirPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ChuniPet.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="230" d:DesignWidth="510">
+    <Grid Margin="20,50,20,16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Row 0: Folder path input + browse button -->
+        <Grid Grid.Row="0" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="FolderPathTextBox"
+                     Grid.Column="0"
+                     Height="32"
+                     VerticalContentAlignment="Center"
+                     Padding="6,0"
+                     TextChanged="FolderPathTextBox_TextChanged"/>
+
+            <Button x:Name="BrowseButton"
+                    Grid.Column="1"
+                    Content="Browse..."
+                    Width="80"
+                    Height="32"
+                    Margin="8,0,0,0"
+                    Click="BrowseButton_Click"/>
+        </Grid>
+
+        <!-- Row 1: Record toggle + open folder buttons -->
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+
+            <Grid x:Name="RecordToggleButton"
+                    Width="80" Height="80"
+                    Margin="0,0,20,0"
+                    IsEnabled="False"
+                    MouseLeftButtonUp="RecordToggleButton_Click">
+                <Image x:Name="RecordButtonImage"
+                       Source="/Assets/Images/UiElements/play.png"
+                       Width="60" Height="60"/>
+            </Grid>
+
+            <Grid x:Name="OpenFolderButton"
+                  Width="80" Height="80"
+                  IsEnabled="False"
+                  MouseLeftButtonUp="OpenFolderButton_Click">
+                <Image Source="/Assets/Images/UiElements/folder.png"
+                       Width="60" Height="60"/>
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</UserControl>
