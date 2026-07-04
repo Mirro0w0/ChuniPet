@@ -28,11 +28,8 @@ public partial class AirPageView : UserControl
     private readonly SystemAudioRecorder _recorder = new();
     private bool _isRecording = false;
 
-    private static readonly BitmapImage StartIcon =
-        new BitmapImage(new Uri("/Assets/Images/UiElements/play.png", UriKind.Relative));
-
-    private static readonly BitmapImage StopIcon =
-        new BitmapImage(new Uri("/Assets/Images/UiElements/stop.png", UriKind.Relative));
+    private static readonly BitmapImage StartIcon = new (new Uri("pack://application:,,,/Assets/Images/UiElements/play.png"));
+    private static readonly BitmapImage StopIcon = new (new Uri("pack://application:,,,/Assets/Images/UiElements/stop.png"));
     
     private void FolderPathTextBox_TextChanged(object sender, TextChangedEventArgs e)
     {

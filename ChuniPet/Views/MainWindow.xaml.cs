@@ -12,6 +12,7 @@ public partial class MainWindow : Window
 {
     private FunctionWindow? _functionWindow;
     private readonly AppSettings _settings = App.Settings;
+    private bool _isExiting = false;
     
     private enum PetState { Idle, WalkLeft, WalkRight, Falling, Dragging, Jumping }
     private PetState _currentState = PetState.Idle;
@@ -262,7 +263,7 @@ public partial class MainWindow : Window
         // }
     }
     
-    public void TogglePause()
+    public bool TogglePause()
     {
         _isPaused = !_isPaused;
 
@@ -280,6 +281,7 @@ public partial class MainWindow : Window
             _currentState = PetState.Idle;
             StartGroundBehaviour();
         }
+        return _isPaused;
     }
 
     public bool IsPaused => _isPaused;
@@ -300,5 +302,52 @@ public partial class MainWindow : Window
         ImageBehavior.SetAnimatedSource(PetSprite, null);
         // Set static PNG
         PetSprite.Source = new BitmapImage(new Uri(pngPath, UriKind.Relative));
+    }
+
+    public void ExternalClose()
+    {
+        this.Close();
+    }
+    
+    private void ExitClick(object sender, RoutedEventArgs e)
+    {
+        this.Close();
+    }
+    
+    private void WindowClosed(object sender, EventArgs e)
+    {
+        if (_isExiting) return;
+        _isExiting = true;
+
+        if (MyNotifyIcon != null)
+        {
+            MyNotifyIcon.IconSource = null;
+            MyNotifyIcon.Visibility = System.Windows.Visibility.Collapsed;
+            
+            MyNotifyIcon.Dispose();
+            MyNotifyIcon = null;
+        }
+        System.Windows.Application.Current.Shutdown();
+    }
+    
+    private void HidePet(object sender, RoutedEventArgs e)
+    {
+        if (this?.IsVisible == true)
+        {
+            this.Hide();
+            HideName.Header = "Show Chuni Penguin";
+        }
+        else
+        {
+            this?.Show(); 
+            this?.Activate();
+            HideName.Header = "Hide Chuni Penguin";
+        }
+    }
+    
+    private void StopPet(object sender, RoutedEventArgs e)
+    {
+        _settings.StopPenguinMovement = TogglePause();
+        SettingsService.Save(_settings);
     }
 }

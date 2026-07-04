@@ -10,10 +10,8 @@ public partial class OriginPageView : UserControl
 {
     public event Action? BackClicked;
     
-    private static readonly BitmapImage _bgNormal =
-        new BitmapImage(new Uri("/Assets/Images/honor_bg_gold.png", UriKind.Relative));
-    private static readonly BitmapImage _bgPressed =
-        new BitmapImage(new Uri("/Assets/Images/honor_bg_master.png", UriKind.Relative));
+    private static readonly BitmapImage _bgNormal = new (new Uri("pack://application:,,,/Assets/Images/honor_bg_gold.png"));
+    private static readonly BitmapImage _bgPressed = new (new Uri("pack://application:,,,/Assets/Images/honor_bg_master.png"));
 
     public OriginPageView()
     {

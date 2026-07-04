@@ -102,7 +102,8 @@ public partial class UniversePageView : UserControl
 
         if (result == MessageBoxResult.Yes)
         {
-            Application.Current.Shutdown();
+            // Application.Current.Shutdown();
+            _mainWindow.ExternalClose();
         }
     }
 
